@@ -26,17 +26,17 @@ const App = () => {
       recovered
     });
   }, []);
-  
+
   const fetch_data = async(api_url) => {
     const request  = await fetch(api_url);
     const response = await request.json();
     return response
   }
-
-  //console.log(country_data)
-  console.log(global_data);
   return (
     <div>
+      <div className="global">
+
+      </div>
       <Table />
     </div>
   )
