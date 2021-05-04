@@ -1,6 +1,7 @@
 import { config } from 'mapbox-gl/dist/mapbox-gl-csp';
 import React , {useEffect, useState} from 'react'
 import Table from './components/Table';
+import Card from './components/Card';
 import Map from './map/Map';
 const App = () => {
   const url = "https://covid-api.mmediagroup.fr/v1/cases";
