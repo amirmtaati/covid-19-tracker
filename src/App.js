@@ -37,7 +37,7 @@ const App = () => {
       <div className="global">
         {
           Object.entries(global_data).map(item => {
-            
+            const [title,number] = item;
           })
         }
       </div>
