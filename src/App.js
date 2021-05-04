@@ -35,7 +35,11 @@ const App = () => {
   return (
     <div>
       <div className="global">
-
+        {
+          Object.entries(global_data).map(item => {
+            
+          })
+        }
       </div>
       <Table />
     </div>
