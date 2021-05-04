@@ -39,6 +39,9 @@ const App = () => {
         {
           Object.entries(global_data).map(item => {
             const [title,number] = item;
+            return (
+              <Card title={title} number={number} />
+            )
           })
         }
       </div>
