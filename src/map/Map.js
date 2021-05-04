@@ -1,6 +1,5 @@
 import React , {useEffect,useRef} from 'react';
 import mapboxgl     from 'mapbox-gl/dist/mapbox-gl-csp';
-
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker'
 
 mapboxgl.workerClass = MapboxWorker;
