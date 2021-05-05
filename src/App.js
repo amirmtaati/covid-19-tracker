@@ -36,6 +36,8 @@ const App = () => {
   return (
     <div>
       <div className="global">
+        <h1>Global</h1>
+        <div className="cards">
         {
           Object.entries(global_data).map(item => {
             const [title,number] = item;
@@ -44,6 +46,7 @@ const App = () => {
             )
           })
         }
+        </div>
       </div>
       <Table />
     </div>
