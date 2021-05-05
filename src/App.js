@@ -5,50 +5,45 @@ import Card from './components/Card';
 import Map from './map/Map';
 const App = () => {
   const url = "https://covid-api.mmediagroup.fr/v1/cases";
-  const [country_data, set_country_data] = useState({});
-  const [global_data, set_global_data]   = useState({});
+  const [countryData, setCountryData] = useState({});
+  const [globalData,setGlobalData]       = useState({})
+
+
   useEffect(async() => {
     const api_data = await fetch_data(url);
-    let confirmed = 0 , deaths = 0 , recovered = 0;
-    Object.entries(api_data).forEach(country => {
-      set_country_data(prev => {
-        return {
-          ...prev,
-          [country[1].All.confirmed] : country[0]
-        }
-      });
-      confirmed += country[1].All.confirmed;
-      deaths     += country[1].All.deaths;
-      recovered += country[1].All.recovered;
+    //console.log(api_data.Global);
+    setGlobalData({
+      Confirmed : api_data.Global.All.confirmed,
+      Deaths    : api_data.Global.All.deaths,
+      Recovered : api_data.Global.All.recovered,
     });
-    set_global_data({
-      confirmed,
-      deaths,
-      recovered
-    });
+    setCountryData(api_data);
   }, []);
+
 
   const fetch_data = async(api_url) => {
     const request  = await fetch(api_url);
     const response = await request.json();
     return response
   }
+
   return (
     <div>
       <div className="global">
         <h1>Global</h1>
         <div className="cards">
-        {
-          Object.entries(global_data).map(item => {
-            const [title,number] = item;
-            return (
-              <Card title={title} number={number} />
-            )
-          })
-        }
+          {
+            Object.entries(globalData).map(item => (
+              <Card title={item[0]} number={item[1]} />
+            ))
+          }
         </div>
       </div>
-      <Table />
+      
+      <div className="table-container">
+        <h1>Countries</h1>
+        <Table data={countryData} />
+      </div>
     </div>
   )
 }

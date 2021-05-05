@@ -29,9 +29,12 @@ body{
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+    cursor: pointer;
 }
+
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
+  transition: 0.5s;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
@@ -41,24 +44,25 @@ body{
 .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #88bef5;
 }
-
+.styled-table tbody tr:hover{
+  background-color: #229954;
+  color:#fff;
+}
 
 /* global */
 
 .global{
   margin:5% 0;
 }
-.global h1{
-  margin:20px 20px;
-}
+
 .global .cards {
   display: flex;
-  justify-content: c;
+  justify-content: space-between;
 }
 .global .cards div{
   flex:1;
+  margin:5px;
   color:#fff;
-  margin:0 20px;
   text-align: center;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
   padding:10px 30px;
@@ -72,12 +76,17 @@ body{
 .global div p{
   font-size: 23px;
 }
-.global .confirmed{
+.global .Confirmed{
   background-color:#2471a3 ;
 }
-.global .deaths{
+.global .Deaths{
   background-color:#cb4335;
 }
-.global .recovered{
+.global .Recovered{
   background-color:#229954  ;
+}
+
+/* ============= */
+.table-container {
+  margin-top:4%;
 }
