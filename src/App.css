@@ -1,0 +1,17 @@
+body{
+    margin:0;
+    padding:0;
+}
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/* side bar section */
+
+.sidebar{
+    background-color:#eee;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    padding:20px;
+}
